@@ -1,6 +1,7 @@
 cmake_minimum_required (VERSION 2.6.3) # using import/export targets, 2.6.3 for open scene graph cmake files
 project(OpenRAVE)
 set( CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS TRUE )
+set( CMAKE_CXX_STANDARD 11)
 
 # Define here the needed parameters
 set (OPENRAVE_VERSION_MAJOR 0)
