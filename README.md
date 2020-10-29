@@ -1,6 +1,6 @@
 # OpenRAVE on Ubuntu 18.04
 
-This package is modified to compile on Ubuntu 18.04 + Boost 1.65.1
+This package is modified from original repos to compile OpenRAVE on Ubuntu 18.04 + Boost 1.65.1
 
 1. Install dependencies
 
@@ -50,7 +50,7 @@ sudo make install
 
 3. Verify installation
 ```sh
-#run this command to check if the library has been installed there
+#run this command to check if the library has been installed successfully
 ls /usr/local/lib | grep libopenrave
 
 ```
