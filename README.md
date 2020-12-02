@@ -22,7 +22,7 @@ libmpfi-dev  libmpfr-dev liboctave-dev libode-dev libogg-dev libpcre3-dev       
 libqhull-dev libswscale-dev libtinyxml-dev libvorbis-dev libx264-dev            \
 libxml2-dev libxvidcore-dev libbz2-dev
 
-sudo apt-get install -y -no-install-recommends libsoqt-dev-common libsoqt4-dev
+sudo apt-get install -y --no-install-recommends libsoqt-dev-common libsoqt4-dev
 
 sudo apt-get install -y --no-install-recommends libccd-dev                  \
   libcollada-dom2.4-dp-dev liblog4cxx-dev libminizip-dev octomap-tools
@@ -54,3 +54,12 @@ sudo make install
 ls /usr/local/lib | grep libopenrave
 
 ```
+
+
+4. Troubleshoot:
+```sh
+/usr/local/include/fcl/math/constants.h:131:1: error: expected primary-expression before ‘typedef’
+ typedef typename detail::ScalarTrait<S>::type Real;
+```
+This error is caused by a conflict of different versions of FCL library. It's highly likely you have two versions of FCL (fcl0.6 and fcl0.5) installed on your computer. The default fcl library for 18.04 is fcl-0.5, so you need to consider which one to use and modify accordingly in the CMakeLists.txt. 
+The easy solution would be deleting the locally installed version (fcl-0.6) by deleting /usr/local/include/fcl* and /usr/local/lib/libfcl*
